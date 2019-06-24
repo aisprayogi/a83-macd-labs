@@ -26,13 +26,13 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "macd-db-server.database.windows.net";
+    $host = " tcp:macd-db-server.database.windows.net";
     $user = "aisprayogi";
     $pass = "HariSeninTanggal24";
     $db = "macd-submit1-db";
 
     try {
-        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
+        $conn = new PDO("sqlsrv:server = tcp:macd-db-server.database.windows.net,1433; Database = $db", $user, $pass);
         $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     } catch(Exception $e) {
         echo "Failed: " . $e;
