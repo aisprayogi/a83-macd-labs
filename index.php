@@ -27,7 +27,7 @@
  </form>
  <?php
 
-    $connectionInfo = array("UID" => "aisprayogi@macd-db-server", "pwd" => "{your_password_here}", "Database" => "macd-submit1-db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+    $connectionInfo = array("UID" => "aisprayogi@macd-db-server", "pwd" => "HariSeninTanggal24", "Database" => "macd-submit1-db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
     $serverName = "tcp:macd-db-server.database.windows.net,1433";
     $conn = sqlsrv_connect($serverName, $connectionInfo);
 
