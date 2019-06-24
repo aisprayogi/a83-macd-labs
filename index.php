@@ -26,16 +26,14 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = " tcp:macd-db-server.database.windows.net";
-    $user = "aisprayogi";
-    $pass = "HariSeninTanggal24";
-    $db = "macd-submit1-db";
 
     try {
-        $conn = new PDO("sqlsrv:server = tcp:macd-db-server.database.windows.net,1433; Database = $db", $user, $pass);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    } catch(Exception $e) {
-        echo "Failed: " . $e;
+       $conn = new PDO("sqlsrv:server = tcp:macd-db-server.database.windows.net,1433; Database = macd-submit1-db", "aisprayogi", "HariSeninTanggal24");
+       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch (PDOException $e) {
+        print("Error connecting to SQL Server.");
+        die(print_r($e));
     }
 
     if (isset($_POST['submit'])) {
